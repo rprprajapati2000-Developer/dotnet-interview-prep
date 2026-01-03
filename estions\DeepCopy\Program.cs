@@ -1,2 +1,0 @@
-
-cjsnjknz  lzknm, sdlkn znm,
