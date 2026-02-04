@@ -28,7 +28,7 @@ public class HelloWorld
                   city = a.address.city
               }
           };
-      Student c = a;
+      
        b.address.city = "ChinchPada";
        Console.WriteLine("Currnt City Is : " + b.address.city);
        
