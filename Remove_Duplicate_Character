@@ -1,0 +1,29 @@
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+       string input= "banana";
+       int [] freq = new int[26];
+       string res = "";
+       foreach(char ch in input){
+           
+           if(freq[ch - 'a']==0) {
+               res += ch;
+               freq[ch- 'a']++;
+               
+           }
+       }
+       
+       Console.WriteLine("After Removing Duplicate Character is : " + res);
+       
+               
+               
+          
+       
+    }
+}
