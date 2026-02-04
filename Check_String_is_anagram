@@ -1,0 +1,41 @@
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+       string s1= "listen";
+       string s2 = "silent";
+       int [] freq = new int[26];
+       if(s1.Length != s2.Length){
+           Console.WriteLine("String is Not Anagram");
+       }
+       
+       foreach(char ch in s1){
+           
+         freq[ch - 'a']++;
+       }
+       foreach(char ch in s2){
+           
+         freq[ch - 'a']--;
+       }
+       
+       foreach(int i in freq){      
+           if(i!= 0){
+       
+        Console.WriteLine("string is not anagram" );
+        return;}
+           
+          }
+            Console.WriteLine("anagram");
+       
+       
+               
+               
+          
+       
+    }
+}
