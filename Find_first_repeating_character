@@ -1,0 +1,29 @@
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+       string input= "Rraahull";
+       int [] freq = new int[26];
+       foreach(char ch in input){
+        char lower = (ch>= 'A' && ch <= 'Z') ? (char)(ch+32) : ch;
+        freq[lower - 'a']++;
+       }
+       foreach(char ch in input){
+           
+           char lower = (ch>= 'A' && ch <= 'Z') ? (char)(ch+32) : ch;
+           if(freq[lower -'a'] >1){
+             // char c = (char)(+ 'a');
+             
+                Console.WriteLine ( lower + " is first non repeating character");
+               break;
+           }
+           
+       }
+       
+    }
+}
