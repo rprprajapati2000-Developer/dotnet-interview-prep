@@ -1,0 +1,30 @@
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+       string input= "Hello World";
+       int vovwel = 0 ;
+       int con = 0;
+       foreach(char ch in input){
+           char lower = (ch>='A' && ch<= 'Z') ? (char)(ch+32): ch ;
+          if(lower >= 'a' && lower <= 'z'){
+           if(lower =='a' || lower == 'e' || lower =='i'|| lower == 'o' || lower == 'u') {
+               vovwel++;
+           }
+           else {
+               con++;
+           }
+       }
+       }  Console.WriteLine ("vowel is : " + vovwel + " And " + "Consonent Is : " + con);
+      
+               
+               
+          
+       
+    }
+}
