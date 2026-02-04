@@ -1,0 +1,24 @@
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+       string input= "hello";
+       string rev = "";
+       for(int i = input.Length-1; i>=0;i--){
+           
+           rev += input[i]; 
+       }
+       
+       Console.WriteLine("Reverse Result Is : " + String.Join(",",rev.ToCharArray()));
+      
+               
+               
+          
+       
+    }
+}
