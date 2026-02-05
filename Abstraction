@@ -1,0 +1,43 @@
+if we are not giving any access modifier so its take default which is "internal"
+if base class having priour access modifier so we can not give below that means base having internal or private so we can not able to give public 
+NOTE: we can not create object for abstract class but we can have constructor in abstract class and also we can have instance of abstract class if we want to initialize that instance for that we have use the child class 
+creating child object and pass the value from there ujsing base in constructor
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
+using System;
+abstract  class Parent{
+   private  string Name {  get; set;}
+    public string Age {get;set;}
+    public string Address {get;set;}
+    public string ParentName{ get { return this.Name;} set {this.Name = value; }}
+    
+    
+     public Parent(string name, string age,string address){
+         this.Name = name;
+         this.Age = age;
+         this.Address = address;
+     }
+     
+    public  abstract void fun();
+    
+}
+  class Child: Parent {
+    public Child(string name, string age,string address) : base(name,age,address){}
+    
+    public  override void fun(){
+         Console.WriteLine ("Calling Parent variable : " + this.ParentName);
+    }
+    
+}
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        Child p = new Child("Chandan", "29","Kalyan");
+       // p.fun();
+        p.ParentName = "Ramraj";
+        Console.WriteLine ("Calling Parent variable : " + p.ParentName);
+    }
+} 
+NOTE : Here is if we define Abstract Method in parent class so for that we have to override that mathod in child class 
