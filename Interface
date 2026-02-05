@@ -1,0 +1,28 @@
+NOTE: If when call like class Child : IParent this so in that class we have to impletyment all method and properties which present in interface 
+using System;
+
+interface IParent
+{
+    string ParentName { get; set; }
+    void fun();
+}
+
+class Child : IParent
+{
+    public string ParentName { get; set; }
+
+    public void fun()
+    {
+        Console.WriteLine("Parent Name : " + ParentName);
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        IParent p = new Child();
+        p.ParentName = "Rahul";
+        p.fun();
+    }
+}
