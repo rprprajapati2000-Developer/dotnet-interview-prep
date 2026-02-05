@@ -1,0 +1,146 @@
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
+using System;
+public class Medical{
+    public string Name {get;set;}
+    public string Age {get;set;}
+    public string address{get;set;}
+    
+    public Medical (){
+        Console.WriteLine ("parent class");
+    }
+    
+    public  void func(){
+         Console.WriteLine ("parent");
+    }
+}
+
+public class Patiant: Medical
+{
+      public string Name {get;set;}
+    public string Age {get;set;}
+    public string address{get;set;}
+    
+    public Patiant (){
+        Console.WriteLine ("Child class");
+    }
+    
+    public   void func(){
+         Console.WriteLine ("Child");
+    }
+    
+}
+
+public class Final{
+     public static void Main(string[] args)
+    {
+        Medical m = new Patiant();
+        m.func();
+       
+    }
+}
+
+OUTPUT :: 
+parent class
+Child class
+parent
+
+Note:here is refrence type is parent class but object created for child so we have two mathod with
+having same name in both class so here using object if we want to call method so here parent method will excecute but if we 
+use virtual in parent and override in child than child mwthid will excecuted for that we have code below :
+using System;
+public class Medical{
+    public string Name {get;set;}
+    public string Age {get;set;}
+    public string address{get;set;}
+    
+    public Medical (){
+        Console.WriteLine ("parent class");
+    }
+    
+    public virtual void func(){
+         Console.WriteLine ("parent");
+    }
+}
+
+public class Patiant: Medical
+{
+      public string Name {get;set;}
+    public string Age {get;set;}
+    public string address{get;set;}
+    
+    public Patiant (){
+        Console.WriteLine ("Child class");
+    }
+    
+    public override  void func(){
+         Console.WriteLine ("Child");
+    }
+    
+}
+
+public class Final{
+     public static void Main(string[] args)
+    {
+        Medical m = new Patiant();
+        m.func();
+       
+    }
+}
+
+if during object creatrion if we give refrence name of parentclass and object is child class so all varible value is denotated to parent class and that value using that refrense we passing through child class using base  
+here is code:
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
+using System;
+public class Medical{
+    public string Name {get;set;}
+    public string Age {get;set;}
+    public string Address{get;set;}
+    public string SerName{get;set;}
+    
+    public Medical (string name , string age , string addres){
+         this.Name = name ;
+         this.Age = age;
+         this.Address = addres;
+        
+    }
+    public Medical(){
+        
+    }
+    
+    public virtual void func(){
+         Console.WriteLine ("parent");
+    }
+}
+
+public class Patiant: Medical
+{
+    
+    public string SerName{get;set;}
+    
+   
+     public Patiant (string name , string age , string address,string serName):base (name,age,address){
+         this.SerName = serName;
+    }
+    
+    
+    public override  void func(){
+         Console.WriteLine ("Child");
+    }
+    
+}
+
+public class Final{
+     public static void Main(string[] args)
+    {
+        Medical m = new Patiant("Rahul","26","kalyan","prajapati");
+        Patiant n = new Patiant("chandan","29","kalyan","prajapati");
+        m.func();
+        Console.WriteLine(n.SerName +"," + m.Name);
+             Console.WriteLine(n.Name);
+       
+    }
+}
