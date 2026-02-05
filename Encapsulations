@@ -1,0 +1,30 @@
+Note: We can not give private to both accessor like {private get; private set;} this 
+Even if we want to give private for both than we can give like this : private string Name {get;set;} And Private string Name Like This  
+if we want access private variable or set private variable for thaty you have to create one properties in that you have to return that variable and set that varibale below is code :
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
+using System;
+public class Parent{
+   private  string Name {  get; set;}
+    public string Age {get;set;}
+    public string Address {get;set;}
+    public string ParentName{ get { return this.Name;} set {this.Name = value; }}
+     public Parent(String name){
+         this.Name = name;
+     }
+    public void fun(){
+      Console.WriteLine("The Parent Value is : " + Name );
+    }
+    
+}
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        Parent p = new Parent("Chandan");
+        p.fun();
+        p.ParentName = "Ramraj";
+        Console.WriteLine ("Calling Parent variable : " + p.ParentName);
+    }
+}
