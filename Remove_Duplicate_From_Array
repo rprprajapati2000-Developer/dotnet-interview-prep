@@ -1,0 +1,38 @@
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+
+using System;
+using System.Linq;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+       int[] arr = {1,2,2,3,3,4};
+       
+       int n = arr.Length ;
+       int [] duplicate = new int[n];
+       int j = 0 ;
+       int k = 0;
+       for(int i= 1; i<n; i ++){
+           
+           if(arr[j] != arr[i]){
+              j++;
+               arr[j] = arr[i];
+               
+           }
+            else
+            {
+                duplicate[k++] = arr[i]; // store current duplicate
+            }
+       }
+       for(int i = 0 ; i<j ; i++){
+           
+           Console.WriteLine("After Removing Duplicate Value : " + arr[i]);
+       }
+         for(int i = 0; i < k; i++){
+            Console.WriteLine(duplicate[i]);}
+       
+       
+    }
+}
