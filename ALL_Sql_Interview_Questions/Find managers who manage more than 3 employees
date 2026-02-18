@@ -1,0 +1,19 @@
+SELECT 
+    m.EmployeeId AS ManagerId,
+    COUNT(e.EmployeeId) AS TotalEmployees
+FROM Employee m
+JOIN Employee e
+ON m.EmployeeId = e.ManagerId
+GROUP BY m.EmployeeId
+HAVING COUNT(e.EmployeeId) > 3;
+
+
+Without Using Join:
+
+SELECT 
+    ManagerId,
+    COUNT(*) AS TotalEmployees
+FROM Employee
+WHERE ManagerId IS NOT NULL
+GROUP BY ManagerId
+HAVING COUNT(*) > 3;
