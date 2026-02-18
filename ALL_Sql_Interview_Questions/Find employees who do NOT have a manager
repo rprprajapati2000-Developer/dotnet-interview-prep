@@ -1,0 +1,3 @@
+SELECT EmployeeId
+FROM Employee
+WHERE ManagerId IS NULL;
