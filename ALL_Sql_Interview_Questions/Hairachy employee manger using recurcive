@@ -1,0 +1,27 @@
+WITH HierarchyManager AS
+(
+    -- 🔹 Anchor Part (Top Level Manager)
+    SELECT 
+        EmployeeId,
+        EmployeeName,
+        ManagerId,
+        0 AS Level
+    FROM Employee
+    WHERE ManagerId IS NULL
+
+    UNION ALL
+
+    -- 🔹 Recursive Part
+    SELECT 
+        e.EmployeeId,
+        e.EmployeeName,
+        e.ManagerId,
+        hm.Level + 1
+    FROM Employee e
+    JOIN HierarchyManager hm
+        ON e.ManagerId = hm.EmployeeId
+)
+
+SELECT *
+FROM HierarchyManager
+ORDER BY Level, EmployeeId;
